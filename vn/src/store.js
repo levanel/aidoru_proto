@@ -7,13 +7,20 @@ const useplayerInfo = create((set)=>({
     score :0,
     inventory:['grace', 'sword'],
     playerName:'tarnished',
-
+    currentNodeId: "start_node",
     updateName : (newName)=>set((state)=>{
         const [nextState, patches, inversePatches] = produceWithPatches(state, (draft)=>{
             draft.playerName=newName;
         });
         backupstates.push(inversePatches);
 
+        return nextState;
+    }),
+    advanceNode :(nextNodeId)=>set((state)=>{
+        const [nextState, patches, inversePatches] = produceWithPatches(state, (draft)=>{
+            draft.currentNodeId=nextNodeId;
+        });
+        backupstates.push(inversePatches);
         return nextState;
     }),
     addScore: (points)=>set((state)=>{

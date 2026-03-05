@@ -1,0 +1,40 @@
+{
+  "start_node": {
+    "type": "event",
+    "background": "bg_park",
+    "nextNode": "node_002"
+  },
+  "node_002": {
+    "type": "dialogue",
+    "speakerName": "Ankur",
+    "text": "Hey there! Wanna walk together?",
+    "nextNode": "node_003"
+  },
+  "node_003": {
+    "type": "branch",
+    "speakerName": "Ankur",
+    "text": "Well? What do you say?",
+    "choices": [
+      {
+        "label": "Sure, I'd like that.",
+        "nextNode": "node_004_yes"
+      },
+      {
+        "label": "Sorry, I have to go study.",
+        "nextNode": "node_004_no"
+      }
+    ]
+  },
+  "node_004_yes": {
+    "type": "dialogue",
+    "speakerName": "Riya",
+    "text": "Let's go then.",
+    "nextNode": "END"
+  },
+  "node_004_no": {
+    "type": "dialogue",
+    "speakerName": "Riya",
+    "text": "Maybe next time.",
+    "nextNode": "END"
+  }
+}
