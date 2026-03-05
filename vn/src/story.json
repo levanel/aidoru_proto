@@ -22,6 +22,10 @@
       {
         "label": "Sorry, I have to go study.",
         "nextNode": "node_004_no"
+      },
+      {
+        "label": "let me loop the shit outa you",
+        "nextNode": "node_002"
       }
     ]
   },
