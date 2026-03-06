@@ -1,0 +1,36 @@
+{
+  "start_node": {
+    "curr":"node_001",
+    "type": "event",
+    "background": "bg_park",
+    "nextNode": "node_002"
+  },
+  "node_002": {
+    "curr":"node_002",
+    "type": "dialogue",
+    "speakerName": "Ankur",
+    "text": "Hey there! Wanna walk together?",
+    "nextNode": "node_003"
+  },
+  "node_003": {
+    "curr":"node_003",
+    "type": "branch",
+    "speakerName": "Ankur",
+    "text": "Well? What do you say?",
+    "nextNode": "node_004"
+  },
+  "node_004": {
+    "curr":"node_004",
+    "type": "dialogue",
+    "speakerName": "Riya",
+    "text": "Let's go then.",
+    "nextNode": "node_005"
+  },
+  "node_005": {
+    "curr":"node_005",
+    "type": "dialogue",
+    "speakerName": "Riya",
+    "text": "Maybe next time.",
+    "nextNode": "node_004"
+  }
+}
