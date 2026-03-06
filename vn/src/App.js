@@ -3,6 +3,7 @@ import './App.css'
 import PlayerDashboard from './components/player';
 import Flowhandler from './components/engine'
 import { checkStoryCycle } from './components/infinitechecker';
+import GraphicEngine from './components/graphengine';
 function App() {
 
   const prerequisites = [
@@ -18,6 +19,7 @@ function App() {
       <h1>eldenring</h1>
       <PlayerDashboard />
       <Flowhandler />
+      <GraphicEngine/>
       {
         iscycle 
           ? "yes"

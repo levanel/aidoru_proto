@@ -1,13 +1,14 @@
 {
   "start_node": {
     "type": "event",
-    "background": "bg_park",
+    "background": "./bg.jpg",
     "nextNode": "node_002"
   },
   "node_002": {
     "type": "dialogue",
     "speakerName": "Ankur",
     "text": "Hey there! Wanna walk together?",
+    "background": "./bg2.png",
     "nextNode": "node_003"
   },
   "node_003": {
