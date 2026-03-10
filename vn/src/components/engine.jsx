@@ -14,7 +14,7 @@ function Flowhandler(){
             {currentNodeData.type === "event" && (
                 <div>
                     <h2>sys event</h2>
-                    <button onClick={()=>advanceNode(currentNodeData.nextNode)}> next part</button>
+                    <button onClick={()=>advanceNode(currentNodeData.nextNode, story)}> next part</button>
                 </div>
             )}
 
@@ -22,7 +22,7 @@ function Flowhandler(){
                 <div>
                     <h3>{currentNodeData.speakerName}</h3>
                     <p>{currentNodeData.text}</p>
-                    <button onClick={()=>advanceNode(currentNodeData.nextNode)}> next dialog</button>
+                    <button onClick={()=>advanceNode(currentNodeData.nextNode, story)}> next dialog</button>
                 </div>
             )}
 
@@ -33,7 +33,7 @@ function Flowhandler(){
                     <ul>
                         {currentNodeData.choices.map((choiceObject, index)=>(
                             <li key = {index}>
-                                <button onClick={()=>advanceNode(choiceObject.nextNode)}>
+                                <button onClick={()=>advanceNode(choiceObject.nextNode, story)}>
                                     {choiceObject.label}
                                 </button>
                             </li>

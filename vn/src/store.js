@@ -1,13 +1,15 @@
 import { create } from "zustand";
 import { produceWithPatches, applyPatches,enablePatches } from "immer";
+import story from './story.json';
 enablePatches();
 
-let backupstates=[];
+let backupstates=[];    
 const useplayerInfo = create((set)=>({
     score :0,
     inventory:['grace', 'sword'],
     playerName:'tarnished',
     currentNodeId: "start_node",
+    currentBackground: story["start_node"].background || null, 
     updateName : (newName)=>set((state)=>{
         const [nextState, patches, inversePatches] = produceWithPatches(state, (draft)=>{
             draft.playerName=newName;
@@ -16,9 +18,16 @@ const useplayerInfo = create((set)=>({
 
         return nextState;
     }),
-    advanceNode :(nextNodeId)=>set((state)=>{
+    advanceNode :(nextNodeId, storyData)=>set((state)=>{
         const [nextState, patches, inversePatches] = produceWithPatches(state, (draft)=>{
             draft.currentNodeId=nextNodeId;
+
+            //check nextnode if it exist.
+            const checknextnode = story[nextNodeId];
+            if(checknextnode && checknextnode.background){
+                draft.currentBackground=checknextnode.background;
+            }
+
         });
         backupstates.push(inversePatches);
         return nextState;

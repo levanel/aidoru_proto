@@ -6,18 +6,18 @@
   },
   "node_002": {
     "type": "dialogue",
-    "speakerName": "Ankur",
-    "text": "Hey there! Wanna walk together?",
-    "background": "./bg2.png",
+    "speakerName": "tarnished",
+    "text": "elden ring?",
     "nextNode": "node_003"
   },
   "node_003": {
     "type": "branch",
-    "speakerName": "Ankur",
-    "text": "Well? What do you say?",
+    "speakerName": "godrick",
+    "text": "Well? what?",
+    "background":"./bg2.png",
     "choices": [
       {
-        "label": "Sure, I'd like that.",
+        "label": "elden ring.",
         "nextNode": "node_004_yes"
       },
       {
@@ -32,13 +32,13 @@
   },
   "node_004_yes": {
     "type": "dialogue",
-    "speakerName": "Riya",
-    "text": "Let's go then.",
+    "speakerName": "godrick",
+    "text": "ok",
     "nextNode": "END"
   },
   "node_004_no": {
     "type": "dialogue",
-    "speakerName": "Riya",
+    "speakerName": "godrick",
     "text": "Maybe next time.",
     "nextNode": "END"
   }
